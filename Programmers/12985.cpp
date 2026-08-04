@@ -23,13 +23,13 @@ using namespace std;
 // }
 
 int solution (int n, int a, int b) {
-    int answer = 0;
-    // 2로 나눈 몫으로 대결 그룹을 만들어간다. a와 b가 같은 그룹에 속할 때까지 반복한다.
-    a--;
-    b--;
-    while (a != b) {
-        a /= 2;
-        b /= 2;
-        answer++;
-    }
+  int answer = 0;
+  // 2로 나눈 몫으로 대결 그룹을 만들어간다. a와 b가 같은 그룹에 속할 때까지 반복한다.
+  a--;
+  b--;
+  while (a != b) {
+    a /= 2;
+    b /= 2;
+    answer++;
+  }
 }
