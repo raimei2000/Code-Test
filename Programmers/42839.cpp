@@ -21,13 +21,14 @@ int solution(string numbers) {
   unordered_set<int> primes;
   unordered_set<int> checked;
   sort(numbers.begin(), numbers.end());
+  const int n = numbers.size();
 
   do {
-    for (int i = 1; i <= numbers.size(); i++) {
-      int target = stoi(numbers.substr(0, i));
-      if (checked.contains(target)) continue;
+    int target = 0;
+    for (int i = 0; i < n; i++) {
+      target = target * 10 + (numbers[i] - '0');
+      if (!checked.insert(target).second) continue;
       if (is_prime(target)) primes.insert(target);
-      checked.insert(target);
     }
   } while (next_permutation(numbers.begin(), numbers.end()));
 
